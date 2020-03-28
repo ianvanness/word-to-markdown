@@ -2,7 +2,7 @@
 
 A Ruby gem to liberate content from [the jail that is Word documents](http://ben.balter.com/2012/10/19/we-ve-been-trained-to-make-paper/#jailbreaking-content)
 
-[![Build Status](https://travis-ci.org/benbalter/word-to-markdown.svg?branch=master)](https://travis-ci.org/benbalter/word-to-markdown) [![Gem Version](https://badge.fury.io/rb/word-to-markdown.png)](http://badge.fury.io/rb/word-to-markdown) [![Inline docs](http://inch-ci.org/github/benbalter/word-to-markdown.png)](http://inch-ci.org/github/benbalter/word-to-markdown) [![Build status](https://ci.appveyor.com/api/projects/status/x2gnsfvli3q47a2e/branch/master?svg=true)](https://ci.appveyor.com/project/benbalter/word-to-markdown/branch/master)
+[![Build Status](https://travis-ci.org/benbalter/word-to-markdown.svg?branch=master)](https://travis-ci.org/benbalter/word-to-markdown) [![Gem Version](https://badge.fury.io/rb/word-to-markdown.png)](http://badge.fury.io/rb/word-to-markdown) [![Inline docs](http://inch-ci.org/github/benbalter/word-to-markdown.png)](http://inch-ci.org/github/benbalter/word-to-markdown) [![Build status](https://ci.appveyor.com/api/projects/status/x2gnsfvli3q47a2e/branch/master?svg=true)](https://ci.appveyor.com/project/benbalter/word-to-markdown/branch/master) [![Maintainability](https://api.codeclimate.com/v1/badges/aae0d67ea7db185f1595/maintainability)](https://codeclimate.com/github/benbalter/word-to-markdown/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/aae0d67ea7db185f1595/test_coverage)](https://codeclimate.com/github/benbalter/word-to-markdown/test_coverage)
 
 ## The problem
 
@@ -14,7 +14,9 @@ A Ruby gem to liberate content from [the jail that is Word documents](http://ben
 
 **[Read more](http://ben.balter.com/2014/03/31/word-versus-markdown-more-than-mere-semantics/)**
 
-**[Demo](http://word-to-markdown.herokuapp.com/)**
+## Just want to convert a Microsoft Word (or Google) document to Markdown?
+
+You can use this **[hosted service](https://word2md.com/)** (or check out [its source](https://github.com/benbalter/word-to-markdown-server)).
 
 ## Install
 
@@ -71,8 +73,16 @@ Word-to-markdown requires `soffice` a command line interface to LibreOffice that
 script/cibuild
 ```
 
-## Server
+## Docker
 
-[Word-to-markdown-demo](https://github.com/benbalter/word-to-markdown-demo) contains a lightweight server for converting Word Documents as a service.
+Everything you need to run the executable locally
 
-A live version runs at [word-to-markdown.herokuapp.com](http://word-to-markdown.herokuapp.com).
+```
+docker-compose build
+docker-compose run --rm app w2m --help
+docker-compose run --rm app w2m test/fixtures/em.docx
+```
+
+## Hosted service
+
+[Word-to-markdown-server](https://github.com/benbalter/word-to-markdown-server) contains a lightweight server for converting Word Documents as a service. A live version runs at [word2md.com](https://word2md.com).
